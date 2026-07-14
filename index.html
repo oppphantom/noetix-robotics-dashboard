@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>松延动力 AI 数据工厂</title>
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --panel: #ffffff;
+      --panel-soft: #fcfaf6;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e7dfd2;
+      --accent: #0f766e;
+      --accent2: #2563eb;
+      --accent3: #f97316;
+      --shadow: 0 10px 30px rgba(31, 41, 55, 0.08);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", PingFang SC, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top left, #fffdf8, transparent 28%),
+        radial-gradient(circle at top right, #eef6ff, transparent 24%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 36px;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, #ffffff, #fffdf8);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 30px 32px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 10px 0 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.1;
+      max-width: 820px;
+    }
+
+    .sub {
+      max-width: 900px;
+      font-size: 16px;
+      line-height: 1.78;
+      color: var(--muted);
+    }
+
+    .chips, .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chips { margin-top: 18px; }
+
+    .chip, .btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #334155;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .btn {
+      cursor: pointer;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: #cbd5e1; }
+    .btn.active {
+      background: linear-gradient(180deg, #effaf8, #ffffff);
+      border-color: rgba(15, 118, 110, .35);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .toolbar {
+      margin-top: 18px;
+      align-items: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .kpi { grid-column: span 3; }
+    .kpi .label {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .kpi .value {
+      margin-top: 8px;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+    .kpi .note {
+      margin-top: 6px;
+      font-size: 12px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .section {
+      grid-column: span 12;
+    }
+    .section.two {
+      grid-column: span 6;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .chart {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 140px 1fr 86px;
+      gap: 12px;
+      align-items: center;
+    }
+    .name {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .track {
+      height: 14px;
+      border-radius: 999px;
+      background: #edf1f5;
+      overflow: hidden;
+    }
+    .fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+    .blue { background: linear-gradient(90deg, #93c5fd, #2563eb); }
+    .green { background: linear-gradient(90deg, #99f6e4, #0f766e); }
+    .orange { background: linear-gradient(90deg, #fed7aa, #f97316); }
+    .purple { background: linear-gradient(90deg, #ddd6fe, #7c3aed); }
+    .score {
+      text-align: right;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+    .table th, .table td {
+      border-bottom: 1px solid #ece5d9;
+      padding: 10px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .table th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: #475569;
+      background: #fbf9f3;
+    }
+
+    .callout {
+      background: linear-gradient(180deg, #fff, #fffaf2);
+      border: 1px solid #efe2c9;
+      border-radius: 18px;
+      padding: 16px 18px;
+      color: #334155;
+    }
+    .callout strong { color: #92400e; }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel-soft);
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 16px;
+      font-weight: 700;
+    }
+    summary::-webkit-details-marker { display: none; }
+    .detail-body {
+      padding: 0 16px 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .accordion {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1020px) {
+      .kpi, .section.two { grid-column: span 12; }
+      .row { grid-template-columns: 1fr; }
+      .score { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Feishu 2026 AI Pioneer Future Talent Contest</div>
+      <h1>松延动力 AI 数据工厂<br>让采集效率成为新的竞争壁垒</h1>
+      <div class="sub">
+        人形机器人行业正在从“机器人会不会动”转向“谁能更快、更稳、更高质量地生产真实场景数据”。这页保留最核心的信息，适合 Notion 里直接阅读。
+      </div>
+
+      <div class="chips">
+        <div class="chip">任务生成</div>
+        <div class="chip">进度协同</div>
+        <div class="chip">质量评分</div>
+        <div class="chip">失败样本回收</div>
+        <div class="chip">知识库反哺</div>
+      </div>
+
+      <div class="grid">
+        <div class="card kpi">
+          <div class="label">主指标</div>
+          <div class="value">160k+</div>
+          <div class="note">任务覆盖是当前最直接、最有说服力的展示指标</div>
+        </div>
+        <div class="card kpi">
+          <div class="label">任务覆盖样本</div>
+          <div class="value">4</div>
+          <div class="note">Open X-Embodiment / AgiBot World / RoboMIND / Dobb-E</div>
+        </div>
+        <div class="card kpi">
+          <div class="label">最大轨迹规模</div>
+          <div class="value">100万+</div>
+          <div class="note">AgiBot World 已进入百万级轨迹采集</div>
+        </div>
+        <div class="card kpi">
+          <div class="label">失败样本</div>
+          <div class="value">5k+</div>
+          <div class="note">RoboMIND 明确保留真实失败示范</div>
+        </div>
+
+        <div class="card section two">
+          <div class="section-head">
+            <h2 id="chartTitle">任务覆盖规模对比</h2>
+            <p id="chartHint">当前主图只保留任务覆盖这一条主线</p>
+          </div>
+          <div class="chart" id="chart"></div>
+          <div class="legend" id="legend"></div>
+        </div>
+
+        <div class="card section two">
+          <div class="section-head">
+            <h2>数据工厂闭环</h2>
+            <p>把采集流程做成可持续迭代的闭环</p>
+          </div>
+          <div class="accordion">
+            <details open>
+              <summary>01 AI 生成采集任务</summary>
+              <div class="detail-body">按机器人、场景、任务自动拆解，减少人工漏项，提升任务生成效率。</div>
+            </details>
+            <details>
+              <summary>02 多维表格协同执行</summary>
+              <div class="detail-body">统一追踪进度、责任人、质量评分与异常状态，避免信息散落在聊天中。</div>
+            </details>
+            <details>
+              <summary>03 失败样本资产化</summary>
+              <div class="detail-body">保留失败动作、偏差和中断，形成可训练资产，而不是采完就删。</div>
+            </details>
+            <details>
+              <summary>04 知识库沉淀经验</summary>
+              <div class="detail-body">把问题、修复和最佳实践沉淀成可复用规则，降低重复踩坑。</div>
+            </details>
+            <details>
+              <summary>05 持续反哺下一轮采集</summary>
+              <div class="detail-body">让采集流程越跑越聪明，形成智能闭环。</div>
+            </details>
+          </div>
+        </div>
+
+        <div class="card section">
+          <div class="section-head">
+            <h2>项目对比表</h2>
+            <p>公开论文与报道的核心信号</p>
+          </div>
+          <div class="callout"><strong>核心判断：</strong>真正的壁垒不是“采集到没有”，而是能不能把采集、验证、失败回收、再采集做成闭环。</div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>项目</th>
+                <th>任务</th>
+                <th>轨迹</th>
+                <th>真实场景 / 失败样本</th>
+                <th>关键启发</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Open X-Embodiment</strong></td>
+                <td>160,266</td>
+                <td>-</td>
+                <td>22 robots / 21 institutions</td>
+                <td>跨机器人标准化是规模化前提</td>
+              </tr>
+              <tr>
+                <td><strong>AgiBot World</strong></td>
+                <td>217</td>
+                <td>1,000,000+</td>
+                <td>5 个部署场景</td>
+                <td>百万级采集已成为行业基础设施</td>
+              </tr>
+              <tr>
+                <td><strong>RoboMIND</strong></td>
+                <td>479</td>
+                <td>107,000</td>
+                <td>5,000 条失败示范</td>
+                <td>失败样本也是重要训练资产</td>
+              </tr>
+              <tr>
+                <td><strong>Dobb-E</strong></td>
+                <td>109</td>
+                <td>13 小时</td>
+                <td>22 个家庭 / 10 个验证家庭</td>
+                <td>真实家庭环境会放大数据质量问题</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card section two">
+          <div class="section-head">
+            <h2>项目经验总结</h2>
+            <p>从公开项目中提炼出的通用经验</p>
+          </div>
+          <div class="accordion">
+            <details open>
+              <summary>标准化是规模化的前提</summary>
+              <div class="detail-body">没有统一的任务、动作、传感器和验收标准，就无法实现跨任务、跨机器人、跨团队复用。</div>
+            </details>
+            <details>
+              <summary>真实场景会放大数据问题</summary>
+              <div class="detail-body">家庭、商场、展厅、工厂中的光照变化、空间限制和操作差异，会显著拉低采集有效率。</div>
+            </details>
+            <details>
+              <summary>失败样本是训练资产</summary>
+              <div class="detail-body">失败动作、碰撞、偏差和中断不能简单删除，应该结构化保留并反向指导下一轮采集。</div>
+            </details>
+            <details>
+              <summary>human-in-the-loop 能显著提升数据质量</summary>
+              <div class="detail-body">人工复核、异常样本筛查和标准流程校验，可以把高规模采集转化为高价值训练集。</div>
+            </details>
+            <details>
+              <summary>数据采集本质上是一个闭环系统</summary>
+              <div class="detail-body">采集 -> 清洗 -> 标注 -> 质检 -> 失败回收 -> 规则修订 -> 再采集，循环越短，机器人迭代越快。</div>
+            </details>
+          </div>
+        </div>
+
+        <div class="card section two">
+          <div class="section-head">
+            <h2>对松延动力命题的启发</h2>
+            <p>从数据采集工程师视角出发</p>
+          </div>
+          <div class="callout">
+            真正要解决的不是“怎么多采一点”，而是“怎么把每一轮采集变成下一轮更聪明的采集”。
+          </div>
+          <div class="accordion" style="margin-top: 12px;">
+            <details open>
+              <summary>1 用 AI 自动生成采集任务和场景清单</summary>
+              <div class="detail-body">减少人工漏项，提高任务覆盖率，尤其适合多场景、多任务并行采集。</div>
+            </details>
+            <details>
+              <summary>2 用多维表格管理进度和质量评分</summary>
+              <div class="detail-body">统一管理机器人、场景、任务、进度、责任人和质量评分，提升协同效率。</div>
+            </details>
+            <details>
+              <summary>3 用知识库沉淀失败案例和优化方案</summary>
+              <div class="detail-body">把问题标签、失败原因和修复策略沉淀为可复用经验，减少重复踩坑。</div>
+            </details>
+            <details>
+              <summary>4 用质量评分机制筛掉低价值数据</summary>
+              <div class="detail-body">把资源集中在高价值场景和高质量样本上，提高数据生产效率。</div>
+            </details>
+            <details>
+              <summary>5 用历史问题反哺下一轮任务生成</summary>
+              <div class="detail-body">让采集规则和任务生成持续进化，形成可持续优化的数据闭环。</div>
+            </details>
+          </div>
+        </div>
+
+        <div class="card section">
+          <div class="section-head">
+            <h2>参考来源</h2>
+            <p>用于报告与答辩引用</p>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>来源</th>
+                <th>链接</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Open X-Embodiment</td>
+                <td><a href="https://arxiv.org/abs/2310.08864" target="_blank" rel="noreferrer">https://arxiv.org/abs/2310.08864</a></td>
+              </tr>
+              <tr>
+                <td>AgiBot World Colosseo</td>
+                <td><a href="https://arxiv.org/abs/2503.06669" target="_blank" rel="noreferrer">https://arxiv.org/abs/2503.06669</a></td>
+              </tr>
+              <tr>
+                <td>RoboMIND</td>
+                <td><a href="https://arxiv.org/abs/2412.13877" target="_blank" rel="noreferrer">https://arxiv.org/abs/2412.13877</a></td>
+              </tr>
+              <tr>
+                <td>Dobb-E / On Bringing Robots Home</td>
+                <td><a href="https://arxiv.org/abs/2311.16098" target="_blank" rel="noreferrer">https://arxiv.org/abs/2311.16098</a></td>
+              </tr>
+              <tr>
+                <td>Household robotics data collection research</td>
+                <td><a href="https://arxiv.org/abs/2405.18687" target="_blank" rel="noreferrer">https://arxiv.org/abs/2405.18687</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="footer">
+        说明：此页采用公开论文和报道中的数据做展示，并对“数据工厂成熟度”作了推断性表达。
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const projects = [
+      { name: 'Open X-Embodiment', tasks: 160266, trajectories: null, maturity: 4.2, color: 'blue' },
+      { name: 'AgiBot World', tasks: 217, trajectories: 1000000, maturity: 4.9, color: 'purple' },
+      { name: 'RoboMIND', tasks: 479, trajectories: 107000, maturity: 4.5, color: 'green' },
+      { name: 'Dobb-E', tasks: 109, trajectories: null, maturity: 3.6, color: 'orange' },
+    ];
+
+    const chart = document.getElementById('chart');
+    const legend = document.getElementById('legend');
+    const title = document.getElementById('chartTitle');
+    const hint = document.getElementById('chartHint');
+    const colors = {
+      blue: 'linear-gradient(90deg,#93c5fd,#2563eb)',
+      green: 'linear-gradient(90deg,#99f6e4,#0f766e)',
+      orange: 'linear-gradient(90deg,#fed7aa,#f97316)',
+      purple: 'linear-gradient(90deg,#ddd6fe,#7c3aed)'
+    };
+
+    function compact(n) {
+      if (n === null || n === undefined) return '-';
+      if (n >= 1000000) return (n / 1000000).toFixed(1).replace('.0', '') + 'M';
+      if (n >= 1000) return Math.round(n / 1000) + 'k';
+      return String(n);
+    }
+
+    function render() {
+      const max = Math.max(...projects.map(p => p.tasks));
+      chart.innerHTML = '';
+      legend.innerHTML = '';
+
+      title.textContent = '任务覆盖规模对比';
+      hint.textContent = '从百级任务到十万级任务，说明行业正进入数据规模竞争';
+
+      projects.forEach(p => {
+        const ratio = max ? (p.tasks / max) * 100 : 0;
+        const row = document.createElement('div');
+        row.className = 'row';
+        row.innerHTML = `
+          <div class="name">${p.name}</div>
+          <div class="track"><div class="fill ${p.color}" style="width:${Math.max(3, ratio)}%; background:${colors[p.color]}"></div></div>
+          <div class="score">${compact(p.tasks)}</div>
+        `;
+        chart.appendChild(row);
+      });
+
+      [
+        ['#2563eb', 'Open X-Embodiment'],
+        ['#7c3aed', 'AgiBot World'],
+        ['#0f766e', 'RoboMIND'],
+        ['#f97316', 'Dobb-E']
+      ].forEach(([c, t]) => {
+        const span = document.createElement('span');
+        span.innerHTML = `<i class="dot" style="background:${c}"></i>${t}`;
+        legend.appendChild(span);
+      });
+
+      document.querySelectorAll('.kpi')[0].querySelector('.value').textContent = '160k+';
+    }
+
+    render();
+  </script>
+</body>
+</html>
