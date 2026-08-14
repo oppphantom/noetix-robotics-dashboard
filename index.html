@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>松延动力 AI 数据工厂｜产品展示中心</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html"><span>AI</span>松延动力 AI 数据工厂</a>
+    <div class="nav-links">
+      <a href="loop.html">闭环流程</a>
+      <a href="dashboard.html">运行看板</a>
+      <a href="architecture.html">架构演进</a>
+      <a href="robots.html">机器人图谱</a>
+      <a href="approval.html">审批门禁</a>
+      <a href="experience.html">体验入口</a>
+    </div>
+  </nav>
+
+  <main class="site-home">
+    <section class="home-hero shell">
+      <div class="hero-copy-panel">
+        <span class="eyebrow">NOETIX ROBOTICS · AI DATA FACTORY</span>
+        <h1><span class="gradient-text">面向真实场景的人形机器人</span><br />多模态数据生产系统</h1>
+        <p>
+          以 Bumi、N2、E1 为核心对象，把需求输入、AI 指标生成、采集任务、自动评分、审批门禁、失败复采和知识沉淀，组织成一个可体验、可解释、可扩展的数据工厂原型。
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="experience.html">进入系统体验</a>
+          <a class="btn" href="architecture.html">查看技术架构</a>
+        </div>
+      </div>
+
+      <div class="robot-stage">
+        <div class="stage-title">
+          <strong>Bumi · N2 · E1</strong>
+          <span>不同机器人型号对应不同采集场景、传感器通道和质量评分重点。</span>
+        </div>
+        <div class="stage-chip c1">RGB-D / IMU / 关节编码器</div>
+        <div class="stage-chip c2">语音 · 表情 · 口型 · 眼神</div>
+        <div class="stage-chip c3">力控 · 末端执行器 · 系统日志</div>
+        <span class="signal-line s1"></span>
+        <span class="signal-line s2"></span>
+        <span class="signal-line s3"></span>
+        <div class="stage-base"></div>
+        <div class="stage-robots">
+          <img src="assets/noetix/bumi_clean.png" alt="Bumi 机器人主体" />
+          <img src="assets/noetix/n2_clean.png" alt="N2 机器人主体" />
+          <img src="assets/noetix/e1_clean.png" alt="E1 机器人主体" />
+        </div>
+      </div>
+    </section>
+
+    <section class="shell home-metrics">
+      <div class="metric">
+        <span>DEMO samples</span>
+        <strong data-count="200">200</strong>
+        <p>采集结果与自动评分表</p>
+      </div>
+      <div class="metric">
+        <span>Generated tasks</span>
+        <strong data-count="347">347</strong>
+        <p>采集任务表，含自动生成与复采任务</p>
+      </div>
+      <div class="metric">
+        <span>Retry queue</span>
+        <strong data-count="153">153</strong>
+        <p>失败样本与复采队列</p>
+      </div>
+      <div class="metric">
+        <span>Trainable candidates</span>
+        <strong data-count="109">109</strong>
+        <p>训练候选池记录</p>
+      </div>
+    </section>
+
+    <section class="shell site-gateway">
+      <div class="section-head centered">
+        <span class="eyebrow">PRODUCT SITE</span>
+        <h2>选择一个模块进入</h2>
+        <p>主页只保留总览和入口。每个模块都是独立页面，进入后再查看详细内容，让展示中心更像一个完整网站，而不是一篇超长报告。</p>
+      </div>
+      <div class="gateway-grid">
+        <a class="gateway-card" href="loop.html">
+          <i>01</i>
+          <b>AI 数据工厂闭环流程</b>
+          <span>从需求输入到失败复采回流，理解系统如何真正跑起来。</span>
+        </a>
+        <a class="gateway-card" href="dashboard.html">
+          <i>02</i>
+          <b>DEMO 样本运行看板</b>
+          <span>查看 200 条样本、A/B/C 分流、覆盖量和复采压力。</span>
+        </a>
+        <a class="gateway-card featured" href="architecture.html">
+          <i>03</i>
+          <b>技术架构与未来演进</b>
+          <span>五层架构、四阶段路线图和从松延动力到具身智能数据生产的可推广性。</span>
+        </a>
+        <a class="gateway-card" href="robots.html">
+          <i>04</i>
+          <b>机器人能力图谱</b>
+          <span>Bumi、N2、E1 的数据采集重点和多模态数据结构。</span>
+        </a>
+        <a class="gateway-card" href="approval.html">
+          <i>05</i>
+          <b>高风险复采审批门禁</b>
+          <span>P0、安全风险、关键日志缺失样本先审批，再进入复采。</span>
+        </a>
+        <a class="gateway-card" href="experience.html">
+          <i>06</i>
+          <b>系统体验入口</b>
+          <span>进入飞书 Base、运营驾驶舱、智能体和 Demo 操作路径。</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">产品展示中心负责系统导览，飞书系统负责闭环运行。所有样本为 DEMO 合成数据。</footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>闭环流程｜松延动力 AI 数据工厂</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html"><span>AI</span>松延动力 AI 数据工厂</a>
+    <div class="nav-links">
+      <a href="loop.html">闭环流程</a>
+      <a href="dashboard.html">运行看板</a>
+      <a href="architecture.html">架构演进</a>
+      <a href="robots.html">机器人图谱</a>
+      <a href="approval.html">审批门禁</a>
+      <a href="experience.html">体验入口</a>
+    </div>
+  </nav>
+  <main class="page-main shell">
+    <section class="page-hero">
+      <span class="eyebrow">CLOSED LOOP</span>
+      <h1>AI 数据工厂闭环流程</h1>
+      <p>这一页只讲清楚一件事：系统不是多建几张表，而是让一次采集结果自动进入评分、分流、复采和知识沉淀，最终反哺下一轮采集。</p>
+      <div class="page-switch">
+        <a class="btn" href="index.html">返回主页</a>
+        <a class="btn primary" href="experience.html">进入系统体验</a>
+      </div>
+    </section>
+
+    <section class="card span-12">
+      <div class="pipeline">
+        <div class="step"><span class="step-num">1</span><h3>需求输入</h3><p>选择机器人型号、场景类型、任务目标、风险等级和采集数据类型。</p></div>
+        <div class="step"><span class="step-num">2</span><h3>AI 生成指标</h3><p>自动输出测试指标、采集通道、检查清单、验收标准和复核点。</p></div>
+        <div class="step"><span class="step-num">3</span><h3>生成采集任务</h3><p>Workflow 写入任务表，自动带优先级、状态和最少填写提示。</p></div>
+        <div class="step"><span class="step-num">4</span><h3>自动评分分流</h3><p>根据质量总分和安全风险自动判断 A/B/C，触发不同路径。</p></div>
+        <div class="step"><span class="step-num">5</span><h3>审批后复采回流</h3><p>C/P0 样本先进入审批门禁，确认通过后再生成复采任务。</p></div>
+      </div>
+      <div class="split">
+        <div class="route a"><strong>A 成功入训候选</strong><span>进入训练候选池，并生成下一轮更复杂场景任务。</span></div>
+        <div class="route b"><strong>B 人工复核</strong><span>进入复核路径，检查低分指标、标注完整性和边界样本。</span></div>
+        <div class="route c"><strong>C 失败复采</strong><span>进入失败队列；高风险样本先审批，避免低质量或高风险复采被自动放大。</span></div>
+      </div>
+    </section>
+
+    <section class="page-hero">
+      <span class="eyebrow">WHY IT MATTERS</span>
+      <h1>系统竞争力</h1>
+      <p>普通方案停在记录任务进度，这套方案的关键在于让数据采集从表格协作升级为可学习、可分流、可复采的数据生产机制。</p>
+    </section>
+    <section class="moat-grid">
+      <div class="moat-card"><small>ROBOT GRAPH</small><strong>机器人能力图谱驱动指标生成</strong><p>先识别 Bumi、N2、E1 的传感器、自由度、末端能力和场景边界，再自动生成对应测试指标。</p></div>
+      <div class="moat-card"><small>QUALITY GATE</small><strong>质量门禁先于训练入库</strong><p>用完整性、同步、任务结果、安全异常、标注元数据构成评分门禁，低价值样本不会直接混入训练候选池。</p></div>
+      <div class="moat-card"><small>FAILURE ASSET</small><strong>失败样本变成可复用资产</strong><p>C 类样本不只是失败记录，而是进入根因、影响通道、复采条件、优先级和知识库经验沉淀。</p></div>
+      <div class="moat-card"><small>APPROVAL GATE</small><strong>高风险复采先过审批门禁</strong><p>P0、关键日志缺失和安全风险样本不会直接自动复采，而是先进入轻量审批。</p></div>
+    </section>
+  </main>
+  <footer class="footer">闭环流程页面 · 所有样本为 DEMO 合成数据。</footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

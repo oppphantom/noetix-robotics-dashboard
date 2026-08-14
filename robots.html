@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>机器人图谱｜松延动力 AI 数据工厂</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html"><span>AI</span>松延动力 AI 数据工厂</a>
+    <div class="nav-links">
+      <a href="loop.html">闭环流程</a>
+      <a href="dashboard.html">运行看板</a>
+      <a href="architecture.html">架构演进</a>
+      <a href="robots.html">机器人图谱</a>
+      <a href="approval.html">审批门禁</a>
+      <a href="experience.html">体验入口</a>
+    </div>
+  </nav>
+  <main class="page-main shell">
+    <section class="page-hero">
+      <span class="eyebrow">ROBOT GRAPH</span>
+      <h1>机器人对象与多模态数据图谱</h1>
+      <p>方案围绕松延动力 Bumi、N2、E1 的公开能力和场景推导设计，不是泛化的任务管理工具。</p>
+      <div class="page-switch">
+        <a class="btn" href="index.html">返回主页</a>
+        <a class="btn primary" href="loop.html">查看闭环流程</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card robot-card span-4">
+        <h3>N2 · 商业导览 / 避障绕行</h3>
+        <p>重点关注移动、避障、RGB-D、IMU、关节编码器、系统日志和复杂环境扰动。</p>
+        <div class="tag-row"><span class="tag">商业导览</span><span class="tag">复杂户外</span><span class="tag">轨迹同步</span></div>
+        <img class="robot-product" src="assets/noetix/n2_clean.png" alt="N2 机器人主体" />
+      </div>
+      <div class="card robot-card span-4">
+        <h3>Bumi · 教育实验室 / 抓取递送</h3>
+        <p>重点关注末端执行器、力控、滑脱检测、递送结果和教学场景交互记录。</p>
+        <div class="tag-row"><span class="tag">教育实验室</span><span class="tag">抓取递送</span><span class="tag">力控日志</span></div>
+        <img class="robot-product" src="assets/noetix/bumi_clean.png" alt="Bumi 机器人主体" />
+      </div>
+      <div class="card robot-card span-4">
+        <h3>E1 · 展厅服务 / 多模态交互</h3>
+        <p>重点关注语音、表情、口型、眼神、灵巧手动作与交互一致性。</p>
+        <div class="tag-row"><span class="tag">展厅服务</span><span class="tag">语音表情</span><span class="tag">灵巧手</span></div>
+        <img class="robot-product" src="assets/noetix/e1_clean.png" alt="E1 机器人主体" />
+      </div>
+      <div class="card span-12">
+        <h3>多模态数据类型矩阵</h3>
+        <div class="matrix">
+          <div class="head">数据类型</div><div class="head">N2</div><div class="head">Bumi</div><div class="head">E1</div>
+          <div>RGB-D / 视频</div><div class="yes">●</div><div class="yes">●</div><div class="yes">●</div>
+          <div>IMU / 关节编码器</div><div class="yes">●</div><div class="yes">●</div><div class="yes">●</div>
+          <div>力控 / 末端执行器</div><div>○</div><div class="yes">●</div><div class="yes">●</div>
+          <div>音频 / 语音</div><div>○</div><div class="yes">●</div><div class="yes">●</div>
+          <div>表情 / 口型 / 眼神</div><div>○</div><div>○</div><div class="yes">●</div>
+          <div>系统日志 / 标注元数据</div><div class="yes">●</div><div class="yes">●</div><div class="yes">●</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">机器人图谱页面 · 能力信息来自公开资料与方案推导。</footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
