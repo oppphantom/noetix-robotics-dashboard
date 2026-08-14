@@ -309,21 +309,21 @@ a { color: inherit; text-decoration: none; }
 .matrix .head { background: #eaf4ff; font-weight: 900; color: var(--navy); }
 .yes { color: var(--blue); font-weight: 950; font-size: 16px; }
 
-.approval-gate { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); gap: 22px; align-items: stretch; }
-.gate-visual { min-height: 420px; position: relative; border-radius: 24px; overflow: hidden; background: linear-gradient(rgba(37,99,235,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,.055) 1px, transparent 1px), linear-gradient(135deg, #f8fbff, #eaf4ff); background-size: 34px 34px, 34px 34px, auto; border: 1px solid rgba(37,99,235,.12); }
-.gate-visual::before { content: ""; position: absolute; width: 72%; height: 2px; left: 8%; top: 50%; background: linear-gradient(90deg, transparent, rgba(37,99,235,.48), rgba(20,184,166,.62), transparent); animation: gateBeam 3.8s ease-in-out infinite; }
-.gate-node { position: absolute; width: 188px; padding: 16px; border-radius: 22px; background: rgba(255,255,255,.92); border: 1px solid rgba(37,99,235,.14); box-shadow: 0 18px 44px rgba(15,42,85,.11); }
-.gate-node.danger { left: 26px; top: 36px; }
-.gate-node.ai { left: 240px; bottom: 34px; }
+.approval-gate { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr); gap: 22px; align-items: stretch; }
+.gate-visual { min-height: 420px; position: relative; border-radius: 24px; overflow: hidden; background: linear-gradient(rgba(37,99,235,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,.055) 1px, transparent 1px), linear-gradient(135deg, #f8fbff, #eaf4ff); background-size: 34px 34px, 34px 34px, auto; border: 1px solid rgba(37,99,235,.12); display: grid; grid-template-columns: 1fr 112px 1.12fr; gap: 18px; align-items: center; padding: 28px; }
+.gate-visual::before { content: ""; position: absolute; left: 9%; right: 9%; top: 50%; height: 2px; background: linear-gradient(90deg, transparent, rgba(37,99,235,.48), rgba(20,184,166,.62), transparent); animation: gateBeam 3.8s ease-in-out infinite; }
+.gate-node { position: relative; z-index: 2; width: auto; min-height: 158px; padding: 18px; border-radius: 24px; background: rgba(255,255,255,.94); border: 1px solid rgba(37,99,235,.14); box-shadow: 0 18px 44px rgba(15,42,85,.11); display: flex; flex-direction: column; justify-content: center; }
+.gate-node.danger { left: auto; top: auto; }
+.gate-node.ai { left: auto; bottom: auto; }
 .gate-node span { display: inline-grid; place-items: center; min-width: 42px; height: 30px; padding: 0 10px; border-radius: 12px; color: #fff; font-size: 12px; font-weight: 950; background: linear-gradient(135deg, var(--blue), var(--cyan)); }
 .gate-node.danger span { background: linear-gradient(135deg, var(--red), #b91c1c); }
 .gate-node strong { display: block; margin-top: 11px; color: var(--navy); font-size: 18px; }
 .gate-node p { margin: 7px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
-.gate-lock { position: absolute; left: 50%; top: 50%; width: 118px; height: 118px; translate: -12% -50%; display: grid; place-items: center; }
+.gate-lock { position: relative; z-index: 2; width: 112px; height: 112px; display: grid; place-items: center; justify-self: center; }
 .lock-core { position: relative; z-index: 2; width: 76px; height: 76px; border-radius: 24px; display: grid; place-items: center; color: #fff; font-weight: 950; background: linear-gradient(135deg, #0f2a55, var(--blue)); box-shadow: 0 18px 46px rgba(37,99,235,.28); }
 .lock-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(20,184,166,.42); border-left-color: transparent; animation: spinGate 4.8s linear infinite; }
-.gate-routes { position: absolute; right: 22px; top: 42px; bottom: 32px; width: 210px; display: grid; gap: 12px; }
-.gate-route { padding: 14px; border-radius: 18px; color: #fff; box-shadow: 0 14px 32px rgba(15,42,85,.12); }
+.gate-routes { position: relative; z-index: 2; right: auto; top: auto; bottom: auto; width: auto; display: grid; gap: 12px; }
+.gate-route { min-height: 92px; padding: 16px; border-radius: 20px; color: #fff; box-shadow: 0 14px 32px rgba(15,42,85,.12); display: flex; flex-direction: column; justify-content: center; }
 .gate-route.pass { background: linear-gradient(135deg, #10b981, #047857); }
 .gate-route.supplement { background: linear-gradient(135deg, #f59e0b, #d97706); }
 .gate-route.reject { background: linear-gradient(135deg, #ef4444, #b91c1c); }
