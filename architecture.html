@@ -4,25 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>技术架构与未来演进｜松延动力 AI 数据工厂</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260816-5" />
 </head>
 <body>
-  <nav class="nav">
-    <a class="brand" href="index.html"><span>AI</span>松延动力 AI 数据工厂</a>
-    <div class="nav-links">
-      <a href="loop.html">闭环流程</a>
-      <a href="dashboard.html">运行看板</a>
-      <a href="architecture.html">架构演进</a>
-      <a href="robots.html">机器人图谱</a>
-      <a href="approval.html">审批门禁</a>
-      <a href="experience.html">体验入口</a>
+  <nav class="nav" aria-label="主导航">
+    <a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark">NX</span><span class="brand-name">Noetix <small>Robotics Data Systems</small></span></a>
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false"><span></span><span></span></button>
+    <div class="nav-panel">
+      <div class="nav-links"><a href="index.html">Overview</a><a href="robots.html">Robotics</a><a href="loop.html">Pipeline</a><a href="architecture.html">Architecture</a><a href="experience.html">Demo</a></div>
+      <a class="nav-launch" href="https://dcniaqwtmoca.feishuapp.com/app/app_17c53ewwq0e" target="_blank" rel="noreferrer">Launch platform <span aria-hidden="true">↗</span></a>
     </div>
   </nav>
   <main class="page-main shell">
     <section class="page-hero">
       <span class="eyebrow">ARCHITECTURE · EVOLUTION · SCALE</span>
       <h1>技术架构与未来演进</h1>
-      <p>这一页回答更深的问题：系统如何从当前可运行 Demo，升级为真实机器人企业可长期复用的数据生产底座。</p>
+      <p>这一页回答更深的问题：系统如何从角色化 Miaoda 应用和飞书自动化底座，升级为真实机器人企业可长期复用的数据生产系统。</p>
       <div class="page-switch">
         <a class="btn" href="index.html">返回主页</a>
         <a class="btn primary" href="experience.html">查看体验入口</a>
@@ -32,31 +29,31 @@
     <section class="architecture-zone">
       <div class="architecture-map">
         <div class="factory-orbit" aria-label="AI 数据工厂五层技术架构">
-          <div class="orbit-chip c-govern">闭环治理<span>入训 / 复核 / 复采 / 审批</span></div>
+          <div class="orbit-chip c-govern">闭环治理<span>入训 / 复采 / 审批 / 淘汰</span></div>
           <div class="orbit-chip c-input">输入层<span>机器人、场景、任务、风险</span></div>
-          <div class="orbit-chip c-knowledge">知识层<span>能力档案、失败案例、评分规则</span></div>
-          <div class="factory-core"><div><strong>AI 数据工厂</strong><span>飞书 Base + Workflow + 智能体 + 看板</span></div></div>
-          <div class="orbit-chip c-ai">AI 生成层<span>指标、清单、验收、复采建议</span></div>
-          <div class="orbit-chip c-exec">执行评分层<span>任务执行、质量分、A/B/C 分流</span></div>
+          <div class="orbit-chip c-knowledge">资产层<span>统一样本宽表、多视图投影</span></div>
+          <div class="factory-core"><div><strong>AI 数据工厂</strong><span>Miaoda 应用 + 飞书 Base + Workflow + AI</span></div></div>
+          <div class="orbit-chip c-ai">AI 增强层<span>指标、质检、预标注、复采建议</span></div>
+          <div class="orbit-chip c-exec">执行评分层<span>任务执行、质量分、A/B/C/D 分流</span></div>
         </div>
         <div class="layer-stack">
-          <div class="layer-card"><div class="layer-index">01</div><div><strong>输入层：最少人工输入</strong><span>使用者只选择机器人型号、场景、任务目标、风险等级和采集数据类型。</span></div></div>
-          <div class="layer-card"><div class="layer-index">02</div><div><strong>知识层：让 AI 先理解机器人</strong><span>沉淀 Bumi、N2、E1 的公开能力、传感器、自由度、末端执行器、失败案例和评分规则。</span></div></div>
-          <div class="layer-card"><div class="layer-index">03</div><div><strong>AI 生成层：任务不是人工从零写</strong><span>自动生成测试指标、采集通道、动作检查清单、异常标签、验收条件和复采建议。</span></div></div>
-          <div class="layer-card"><div class="layer-index">04</div><div><strong>执行评分层：质量门禁自动分流</strong><span>公式与 Workflow 自动计算质量分，按 A/B/C 进入入训候选、人工复核或失败复采。</span></div></div>
-          <div class="layer-card"><div class="layer-index">05</div><div><strong>闭环治理层：失败样本反哺下一轮采集</strong><span>C 类和 P0 样本进入复采队列与审批门禁，成为下一轮任务生成依据。</span></div></div>
+          <div class="layer-card"><div class="layer-index">01</div><div><strong>体验层：角色化 Miaoda 应用</strong><span>首页角色分发，采集员工作台执行任务，管理者指挥舱看指标和处理事务。</span></div></div>
+          <div class="layer-card"><div class="layer-index">02</div><div><strong>资产层：统一样本资产宽表</strong><span>约 80 个字段覆盖采集到入训全生命周期，数据清洗、预标注、审核和资源调度由视图投影生成。</span></div></div>
+          <div class="layer-card"><div class="layer-index">03</div><div><strong>AI 增强层：四个结构化决策点</strong><span>指标生成、采后质检、AI 预标注和复采建议全部落库，支持追溯和人工确认。</span></div></div>
+          <div class="layer-card"><div class="layer-index">04</div><div><strong>执行评分层：状态颜色语义统一</strong><span>绿色代表达标入训，橙色代表警告复采，红色代表淘汰或高风险审批，并配合文字和图标。</span></div></div>
+          <div class="layer-card"><div class="layer-index">05</div><div><strong>闭环治理层：失败样本反哺下一轮采集</strong><span>C/D 类样本进入复采、审批或淘汰路径，知识沉淀继续优化下一轮任务生成。</span></div></div>
         </div>
       </div>
 
       <div class="architecture-subgrid">
         <div class="card dark-card">
           <h3>未来迭代路线</h3>
-          <p>当前系统已经跑通演示闭环，下一步不应停在更多表格，而是逐步接近真实数据生产系统。</p>
+          <p>当前系统已经跑通角色化演示闭环，下一步不应停在更多页面，而是逐步接近真实数据生产系统。</p>
           <div class="roadmap">
-            <div class="roadmap-item"><div class="roadmap-dot">1</div><div><strong>更强任务生成</strong><span>升级为基于历史失败样本、场景难度、机器人能力差异的任务推荐。</span></div></div>
-            <div class="roadmap-item"><div class="roadmap-dot">2</div><div><strong>接入真实采集结果</strong><span>在不触碰控制算法的前提下，接入 RGB-D、IMU、关节编码器、系统日志等采集结果。</span></div></div>
-            <div class="roadmap-item"><div class="roadmap-dot">3</div><div><strong>原生审批与权限治理</strong><span>升级为飞书原生审批，用于高风险复采、外场采集、数据入训确认等企业流程。</span></div></div>
-            <div class="roadmap-item"><div class="roadmap-dot">4</div><div><strong>模型训练反馈闭环</strong><span>将训练效果、失败率变化和场景泛化表现回流给任务生成模块。</span></div></div>
+            <div class="roadmap-item"><div class="roadmap-dot">1</div><div><strong>近期：多型号并行与实时大屏</strong><span>支持 Bumi、N2、E1 多机器人并行采集，并把今日工作台升级为实时监控大屏。</span></div></div>
+            <div class="roadmap-item"><div class="roadmap-dot">2</div><div><strong>近期：移动端采集助手</strong><span>采集员可在移动端查看任务、提交结果和处理复采，减少桌面端依赖。</span></div></div>
+            <div class="roadmap-item"><div class="roadmap-dot">3</div><div><strong>中期：智能排产与质量预测</strong><span>基于历史数据和资源状态生成排产计划，并提前预警质量滑坡。</span></div></div>
+            <div class="roadmap-item"><div class="roadmap-dot">4</div><div><strong>远期：模型自迭代与开放 API</strong><span>训练候选池触发模型再训练，并开放质检、标注、分流等能力 API。</span></div></div>
           </div>
         </div>
 
@@ -79,6 +76,6 @@
   <footer class="footer">架构演进页面 · 所有样本为 DEMO 合成数据。</footer>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="site.js"></script>
+  <script src="site.js?v=20260816-5"></script>
 </body>
 </html>

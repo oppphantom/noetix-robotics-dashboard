@@ -3,137 +3,95 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>松延动力 AI 数据工厂｜产品展示中心</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="松延动力面向真实世界机器人的多模态数据生产系统，从任务定义到可训练数据形成质量闭环。" />
+  <title>松延动力 AI 数据工厂｜Physical AI Data Infrastructure</title>
+  <link rel="stylesheet" href="styles.css?v=20260816-5" />
 </head>
 <body>
-  <nav class="nav">
-    <a class="brand" href="index.html"><span>AI</span>松延动力 AI 数据工厂</a>
-    <div class="nav-links">
-      <a href="loop.html">闭环流程</a>
-      <a href="dashboard.html">运行看板</a>
-      <a href="architecture.html">架构演进</a>
-      <a href="robots.html">机器人图谱</a>
-      <a href="approval.html">审批门禁</a>
-      <a href="experience.html">体验入口</a>
+  <nav class="nav" aria-label="主导航">
+    <a class="brand" href="index.html" aria-label="返回首页">
+      <span class="brand-mark">NX</span>
+      <span class="brand-name">Noetix <small>Robotics Data Systems</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false"><span></span><span></span></button>
+    <div class="nav-panel">
+      <div class="nav-links"><a href="index.html">Overview</a><a href="robots.html">Robotics</a><a href="loop.html">Pipeline</a><a href="architecture.html">Architecture</a><a href="experience.html">Demo</a></div>
+      <a class="nav-launch" href="https://dcniaqwtmoca.feishuapp.com/app/app_17c53ewwq0e" target="_blank" rel="noreferrer">Launch platform <span aria-hidden="true">↗</span></a>
     </div>
   </nav>
 
   <main class="site-home">
-    <section class="home-hero shell">
+    <section class="home-hero shell" id="overview">
+      <canvas class="hero-data-field" aria-hidden="true"></canvas>
       <div class="hero-copy-panel">
-        <span class="eyebrow">NOETIX ROBOTICS · AI DATA FACTORY</span>
-        <h1><span class="gradient-text">面向真实场景的人形机器人</span><br />多模态数据生产系统</h1>
-        <p>
-          以 Bumi、N2、E1 为核心对象，把需求输入、AI 指标生成、采集任务、自动评分、审批门禁、失败复采和知识沉淀，组织成一个可体验、可解释、可扩展的数据工厂原型。
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="experience.html">进入系统体验</a>
-          <a class="btn" href="architecture.html">查看技术架构</a>
-        </div>
+        <span class="eyebrow">PHYSICAL AI DATA INFRASTRUCTURE</span>
+        <h1>面向真实世界机器人的<br /><span class="accent-text">多模态数据生产系统</span></h1>
+        <p>从任务定义到可训练数据，松延动力 AI 数据工厂把采集、质量判断、人工审核与失败复采组织成持续运行的数据闭环。</p>
+        <div class="hero-actions"><a class="btn primary" href="#platform">探索系统 <span aria-hidden="true">↓</span></a><a class="btn" href="experience.html">查看 Demo Portal <span aria-hidden="true">→</span></a></div>
+        <div class="hero-proof" aria-label="系统关键能力"><span><i></i> Structured AI decisions</span><span><i></i> Human-in-the-loop control</span><span><i></i> Multi-robot ready</span></div>
       </div>
-
-      <div class="robot-stage">
-        <div class="stage-title">
-          <strong>Bumi · N2 · E1</strong>
-          <span>不同机器人型号对应不同采集场景、传感器通道和质量评分重点。</span>
-        </div>
-        <div class="stage-chip c1">RGB-D / IMU / 关节编码器</div>
-        <div class="stage-chip c2">语音 · 表情 · 口型 · 眼神</div>
-        <div class="stage-chip c3">力控 · 末端执行器 · 系统日志</div>
-        <span class="signal-line s1"></span>
-        <span class="signal-line s2"></span>
-        <span class="signal-line s3"></span>
+      <div class="robot-stage" aria-label="Bumi、N2、E1 机器人产品视觉">
+        <div class="stage-meta"><span>ROBOT FLEET / 03</span><strong>Bumi · N2 · E1</strong></div>
+        <div class="stage-status"><i></i> Data loop online</div>
+        <span class="signal-line s1"></span><span class="signal-line s2"></span><span class="signal-line s3"></span>
         <div class="stage-base"></div>
-        <div class="stage-robots">
-          <img src="assets/noetix/bumi_clean.png" alt="Bumi 机器人主体" />
-          <img src="assets/noetix/n2_clean.png" alt="N2 机器人主体" />
-          <img src="assets/noetix/e1_clean.png" alt="E1 机器人主体" />
-        </div>
+        <div class="stage-robots"><img src="assets/noetix/bumi_clean.png" alt="Bumi 人形机器人" /><img src="assets/noetix/n2_clean.png" alt="N2 人形机器人" /><img src="assets/noetix/e1_clean.png" alt="E1 人形机器人" /></div>
+        <div class="stage-modality"><span>RGB-D</span><span>IMU</span><span>Force</span><span>Audio</span><span>Logs</span></div>
       </div>
     </section>
 
-    <section class="shell demo-video-section">
-      <div class="section-head centered">
-        <span class="eyebrow">DEMO VIDEO</span>
-        <h2>2 分钟看懂 AI 数据工厂如何运行</h2>
-        <p>从外部展示中心进入飞书系统，查看需求输入、AI 指标生成、自动评分、失败复采和运营看板的完整演示路径。</p>
+    <section class="performance shell" aria-labelledby="performance-title">
+      <div class="performance-intro"><span class="eyebrow">PERFORMANCE / DEMO</span><h2 id="performance-title">系统当前运行截面</h2></div>
+      <div class="performance-strip">
+        <div class="performance-item"><strong data-count="200">200</strong><span>DEMO samples</span><p>统一样本资产</p></div>
+        <div class="performance-item"><strong data-count="18">18</strong><span>Today tasks</span><p>今日待处理任务</p></div>
+        <div class="performance-item"><strong data-count="52">52</strong><span>Retry queue</span><p>待复采样本</p></div>
+        <div class="performance-item"><strong data-count="72">72</strong><span>Trainable</span><p>可入训候选</p></div>
       </div>
-      <div class="demo-video-card">
-        <video controls preload="metadata" poster="assets/demo-media/noetix-demo-cover.jpg">
-          <source src="assets/demo-media/noetix-demo-video.mp4" type="video/mp4" />
-          当前浏览器不支持直接播放视频，请使用体验入口中的 Demo 链接查看。
-        </video>
+      <p class="data-note">所有数字均为 DEMO 合成数据，用于展示系统工作机制。</p>
+    </section>
+
+    <section class="system-overview shell" id="platform">
+      <div class="section-head"><div><span class="eyebrow">SYSTEM OVERVIEW</span><h2>From task definition<br />to trainable robot data.</h2></div><p>每一条采集结果都经过质量评分、AI 质检和人工门禁。失败不是流程终点，而是下一轮采集策略的输入。</p></div>
+      <div class="flow-canvas" aria-label="机器人数据生产闭环">
+        <div class="flow-track" aria-hidden="true"><span></span></div>
+        <div class="flow-node"><b>01</b><strong>Task</strong><span>需求与指标</span></div><div class="flow-node"><b>02</b><strong>Collect</strong><span>多模态采集</span></div><div class="flow-node"><b>03</b><strong>Evaluate</strong><span>质量评分</span></div><div class="flow-node"><b>04</b><strong>Review</strong><span>AI + 人工质检</span></div><div class="flow-node"><b>05</b><strong>Retry</strong><span>失败复采</span></div><div class="flow-node"><b>06</b><strong>Dataset</strong><span>训练候选池</span></div>
+      </div>
+      <div class="decision-rail"><div><span>AI / 01</span><strong>需求文本 → 量化指标</strong></div><div><span>AI / 02</span><strong>采集日志 → 质量画像</strong></div><div><span>AI / 03</span><strong>原始数据 → 预标注</strong></div><div><span>AI / 04</span><strong>失败原因 → 复采方案</strong></div></div>
+    </section>
+
+    <section class="robotics-home shell" id="robotics">
+      <div class="section-head"><div><span class="eyebrow">ROBOTICS</span><h2>一套数据系统，理解不同机器人。</h2></div><p>机器人能力档案决定采什么、怎么评、失败后如何复采。点击型号查看对应的数据生产重点。</p></div>
+      <div class="robot-selector" role="tablist" aria-label="选择机器人型号"><button class="robot-tab active" type="button" role="tab" aria-selected="true" data-robot="bumi">Bumi <span>Manipulation</span></button><button class="robot-tab" type="button" role="tab" aria-selected="false" data-robot="n2">N2 <span>Navigation</span></button><button class="robot-tab" type="button" role="tab" aria-selected="false" data-robot="e1">E1 <span>Interaction</span></button></div>
+      <div class="robot-panels">
+        <article class="robot-panel active" data-robot-panel="bumi"><div class="robot-copy"><span class="robot-index">01 / BUMI</span><h3>抓取、递送与力控数据</h3><p>面向教育实验室与操作任务，记录末端执行器、力控、滑脱检测、递送结果和场景交互。</p><dl><div><dt>Role</dt><dd>Manipulation platform</dd></div><div><dt>Modalities</dt><dd>RGB-D · Force · Joint · Logs</dd></div><div><dt>Status</dt><dd><i></i> Demo ready</dd></div></dl></div><div class="robot-visual"><img src="assets/noetix/bumi_clean.png" alt="Bumi 机器人产品图" /></div></article>
+        <article class="robot-panel" data-robot-panel="n2" hidden><div class="robot-copy"><span class="robot-index">02 / N2</span><h3>移动、避障与轨迹同步</h3><p>面向商业导览与复杂环境，记录 RGB-D、IMU、关节编码器、移动轨迹和系统日志。</p><dl><div><dt>Role</dt><dd>Navigation platform</dd></div><div><dt>Modalities</dt><dd>RGB-D · IMU · Joint · Logs</dd></div><div><dt>Status</dt><dd><i></i> Demo ready</dd></div></dl></div><div class="robot-visual"><img src="assets/noetix/n2_clean.png" alt="N2 机器人产品图" /></div></article>
+        <article class="robot-panel" data-robot-panel="e1" hidden><div class="robot-copy"><span class="robot-index">03 / E1</span><h3>语音、表情与多模态交互</h3><p>面向展厅服务与人机交互，记录语音、表情、口型、眼神、灵巧手动作和交互一致性。</p><dl><div><dt>Role</dt><dd>Interaction platform</dd></div><div><dt>Modalities</dt><dd>Audio · Vision · Gesture · Logs</dd></div><div><dt>Status</dt><dd><i></i> Demo ready</dd></div></dl></div><div class="robot-visual"><img src="assets/noetix/e1_clean.png" alt="E1 机器人产品图" /></div></article>
+      </div>
+      <a class="text-link" href="robots.html">查看完整机器人数据图谱 <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="capabilities shell" id="capabilities">
+      <div class="section-head"><div><span class="eyebrow">PRODUCT SURFACES</span><h2>理解系统的六个切面</h2></div><p>每个页面回答一个清晰问题，从数据如何流动，到机器人能力如何映射为可训练资产。</p></div>
+      <div class="bento-grid">
+        <a class="bento bento-pipeline" href="loop.html"><span class="bento-label">PIPELINE / 01</span><h3>闭环流程</h3><p>需求、采集、质检、分流、复采与知识沉淀。</p><div class="mini-flow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></a>
+        <a class="bento bento-robots" href="robots.html"><span class="bento-label">ROBOT GRAPH / 02</span><h3>机器人图谱</h3><p>型号能力决定数据模态与质量策略。</p><div class="bento-robot-stack" aria-hidden="true"><img src="assets/noetix/bumi_clean.png" alt="" /><img src="assets/noetix/n2_clean.png" alt="" /><img src="assets/noetix/e1_clean.png" alt="" /></div></a>
+        <a class="bento bento-metrics" href="dashboard.html"><span class="bento-label">OPERATIONS / 03</span><h3>运行指标</h3><div class="mini-metrics"><span><b>72</b> Trainable</span><span><b>52</b> Retry</span></div></a>
+        <a class="bento bento-architecture" href="architecture.html"><span class="bento-label">STACK / 04</span><h3>技术架构</h3><div class="mini-stack" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></a>
+        <a class="bento bento-gate" href="approval.html"><span class="bento-label">CONTROL / 05</span><h3>审批门禁</h3><p>高风险样本进入人工决策。</p><div class="gate-state"><i></i><span>P0 / REVIEW REQUIRED</span></div></a>
+        <a class="bento bento-demo" href="experience.html"><span class="bento-label">DEMO PORTAL / 06</span><h3>查看系统如何运行</h3><p>按角色进入采集员工作台、AI 质检中心和管理者指挥舱。</p><span class="bento-cta">Open demo <i aria-hidden="true">→</i></span></a>
       </div>
     </section>
 
-    <section class="shell home-metrics">
-      <div class="metric">
-        <span>DEMO samples</span>
-        <strong data-count="200">200</strong>
-        <p>采集结果与自动评分表</p>
-      </div>
-      <div class="metric">
-        <span>Generated tasks</span>
-        <strong data-count="347">347</strong>
-        <p>采集任务表，含自动生成与复采任务</p>
-      </div>
-      <div class="metric">
-        <span>Retry queue</span>
-        <strong data-count="153">153</strong>
-        <p>失败样本与复采队列</p>
-      </div>
-      <div class="metric">
-        <span>Trainable candidates</span>
-        <strong data-count="109">109</strong>
-        <p>训练候选池记录</p>
-      </div>
-    </section>
-
-    <section class="shell site-gateway">
-      <div class="section-head centered">
-        <span class="eyebrow">PRODUCT SITE</span>
-        <h2>选择一个模块进入</h2>
-        <p>主页只保留总览和入口。每个模块都是独立页面，进入后再查看详细内容，让展示中心更像一个完整网站，而不是一篇超长报告。</p>
-      </div>
-      <div class="gateway-grid">
-        <a class="gateway-card" href="loop.html">
-          <i>01</i>
-          <b>AI 数据工厂闭环流程</b>
-          <span>从需求输入到失败复采回流，理解系统如何真正跑起来。</span>
-        </a>
-        <a class="gateway-card" href="dashboard.html">
-          <i>02</i>
-          <b>DEMO 样本运行看板</b>
-          <span>查看 200 条样本、A/B/C 分流、覆盖量和复采压力。</span>
-        </a>
-        <a class="gateway-card featured" href="architecture.html">
-          <i>03</i>
-          <b>技术架构与未来演进</b>
-          <span>五层架构、四阶段路线图和从松延动力到具身智能数据生产的可推广性。</span>
-        </a>
-        <a class="gateway-card" href="robots.html">
-          <i>04</i>
-          <b>机器人能力图谱</b>
-          <span>Bumi、N2、E1 的数据采集重点和多模态数据结构。</span>
-        </a>
-        <a class="gateway-card" href="approval.html">
-          <i>05</i>
-          <b>高风险复采审批门禁</b>
-          <span>P0、安全风险、关键日志缺失样本先审批，再进入复采。</span>
-        </a>
-        <a class="gateway-card" href="experience.html">
-          <i>06</i>
-          <b>系统体验入口</b>
-          <span>进入飞书 Base、运营驾驶舱、智能体和 Demo 操作路径。</span>
-        </a>
-      </div>
+    <section class="demo-portal shell" id="demo">
+      <div class="demo-copy"><span class="eyebrow">LIVE PRODUCT EXPERIENCE</span><h2>从展示站进入真实业务体验。</h2><p>本网站负责解释产品与技术逻辑；妙搭应用承载采集员、AI 质检和管理者的真实交互路径。</p><div class="hero-actions"><a class="btn primary" href="https://dcniaqwtmoca.feishuapp.com/app/app_17c53ewwq0e" target="_blank" rel="noreferrer">Launch platform <span aria-hidden="true">↗</span></a><a class="btn" href="experience.html">查看体验路线 <span aria-hidden="true">→</span></a></div></div>
+      <div class="workstation-preview" aria-label="角色化工作台预览"><div class="preview-top"><span><i></i> DATA FACTORY / LIVE DEMO</span><b>DEMO</b></div><div class="preview-grid"><div class="preview-role"><span>COLLECTOR</span><strong>18</strong><p>今日任务</p><i class="preview-line l1"></i><i class="preview-line l2"></i><i class="preview-line l3"></i></div><div class="preview-role"><span>AI QUALITY</span><strong>A/B</strong><p>结构化质检</p><i class="preview-line l1"></i><i class="preview-line l2"></i><i class="preview-line l3"></i></div><div class="preview-role"><span>MANAGER</span><strong>52</strong><p>待复采样本</p><i class="preview-line l1"></i><i class="preview-line l2"></i><i class="preview-line l3"></i></div></div></div>
     </section>
   </main>
 
-  <footer class="footer">产品展示中心负责系统导览，飞书系统负责闭环运行。所有样本为 DEMO 合成数据。</footer>
+  <footer class="footer"><div class="shell footer-inner"><div><strong>Noetix Robotics</strong><p>Data infrastructure for real-world robot learning.</p></div><div class="footer-links"><a href="robots.html">Robotics</a><a href="loop.html">Pipeline</a><a href="architecture.html">Architecture</a><a href="experience.html">Demo</a></div><span>DEMO data · 2026</span></div></footer>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="site.js"></script>
+  <script src="site.js?v=20260816-5"></script>
 </body>
 </html>

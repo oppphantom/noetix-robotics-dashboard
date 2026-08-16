@@ -4,18 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>机器人图谱｜松延动力 AI 数据工厂</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260816-5" />
 </head>
 <body>
-  <nav class="nav">
-    <a class="brand" href="index.html"><span>AI</span>松延动力 AI 数据工厂</a>
-    <div class="nav-links">
-      <a href="loop.html">闭环流程</a>
-      <a href="dashboard.html">运行看板</a>
-      <a href="architecture.html">架构演进</a>
-      <a href="robots.html">机器人图谱</a>
-      <a href="approval.html">审批门禁</a>
-      <a href="experience.html">体验入口</a>
+  <nav class="nav" aria-label="主导航">
+    <a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark">NX</span><span class="brand-name">Noetix <small>Robotics Data Systems</small></span></a>
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false"><span></span><span></span></button>
+    <div class="nav-panel">
+      <div class="nav-links"><a href="index.html">Overview</a><a href="robots.html">Robotics</a><a href="loop.html">Pipeline</a><a href="architecture.html">Architecture</a><a href="experience.html">Demo</a></div>
+      <a class="nav-launch" href="https://dcniaqwtmoca.feishuapp.com/app/app_17c53ewwq0e" target="_blank" rel="noreferrer">Launch platform <span aria-hidden="true">↗</span></a>
     </div>
   </nav>
   <main class="page-main shell">
@@ -29,25 +26,22 @@
       </div>
     </section>
 
-    <section class="grid">
-      <div class="card robot-card span-4">
-        <h3>N2 · 商业导览 / 避障绕行</h3>
-        <p>重点关注移动、避障、RGB-D、IMU、关节编码器、系统日志和复杂环境扰动。</p>
-        <div class="tag-row"><span class="tag">商业导览</span><span class="tag">复杂户外</span><span class="tag">轨迹同步</span></div>
-        <img class="robot-product" src="assets/noetix/n2_clean.png" alt="N2 机器人主体" />
-      </div>
-      <div class="card robot-card span-4">
-        <h3>Bumi · 教育实验室 / 抓取递送</h3>
-        <p>重点关注末端执行器、力控、滑脱检测、递送结果和教学场景交互记录。</p>
-        <div class="tag-row"><span class="tag">教育实验室</span><span class="tag">抓取递送</span><span class="tag">力控日志</span></div>
-        <img class="robot-product" src="assets/noetix/bumi_clean.png" alt="Bumi 机器人主体" />
-      </div>
-      <div class="card robot-card span-4">
-        <h3>E1 · 展厅服务 / 多模态交互</h3>
-        <p>重点关注语音、表情、口型、眼神、灵巧手动作与交互一致性。</p>
-        <div class="tag-row"><span class="tag">展厅服务</span><span class="tag">语音表情</span><span class="tag">灵巧手</span></div>
-        <img class="robot-product" src="assets/noetix/e1_clean.png" alt="E1 机器人主体" />
-      </div>
+    <section class="robot-detail-list">
+      <article class="robot-detail-row">
+        <div class="robot-detail-copy"><span class="eyebrow">N2 / NAVIGATION</span><h2>商业导览与避障绕行</h2><p>重点记录移动轨迹、避障结果、RGB-D、IMU、关节编码器、系统日志和复杂环境扰动。</p><div class="tag-row"><span class="tag">商业导览</span><span class="tag">复杂户外</span><span class="tag">轨迹同步</span></div></div>
+        <div class="robot-detail-visual"><img src="assets/noetix/n2_clean.png" alt="N2 机器人主体" /></div>
+      </article>
+      <article class="robot-detail-row reverse">
+        <div class="robot-detail-copy"><span class="eyebrow">BUMI / MANIPULATION</span><h2>教育实验与抓取递送</h2><p>重点记录末端执行器、力控、滑脱检测、递送结果和教学场景交互过程。</p><div class="tag-row"><span class="tag">教育实验室</span><span class="tag">抓取递送</span><span class="tag">力控日志</span></div></div>
+        <div class="robot-detail-visual"><img src="assets/noetix/bumi_clean.png" alt="Bumi 机器人主体" /></div>
+      </article>
+      <article class="robot-detail-row">
+        <div class="robot-detail-copy"><span class="eyebrow">E1 / INTERACTION</span><h2>展厅服务与多模态交互</h2><p>重点记录语音、表情、口型、眼神、灵巧手动作与人机交互一致性。</p><div class="tag-row"><span class="tag">展厅服务</span><span class="tag">语音表情</span><span class="tag">灵巧手</span></div></div>
+        <div class="robot-detail-visual"><img src="assets/noetix/e1_clean.png" alt="E1 机器人主体" /></div>
+      </article>
+    </section>
+
+    <section class="grid robot-matrix-section">
       <div class="card span-12">
         <h3>多模态数据类型矩阵</h3>
         <div class="matrix">
@@ -65,6 +59,6 @@
   <footer class="footer">机器人图谱页面 · 能力信息来自公开资料与方案推导。</footer>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="site.js"></script>
+  <script src="site.js?v=20260816-5"></script>
 </body>
 </html>

@@ -4,25 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>闭环流程｜松延动力 AI 数据工厂</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260816-5" />
 </head>
 <body>
-  <nav class="nav">
-    <a class="brand" href="index.html"><span>AI</span>松延动力 AI 数据工厂</a>
-    <div class="nav-links">
-      <a href="loop.html">闭环流程</a>
-      <a href="dashboard.html">运行看板</a>
-      <a href="architecture.html">架构演进</a>
-      <a href="robots.html">机器人图谱</a>
-      <a href="approval.html">审批门禁</a>
-      <a href="experience.html">体验入口</a>
+  <nav class="nav" aria-label="主导航">
+    <a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark">NX</span><span class="brand-name">Noetix <small>Robotics Data Systems</small></span></a>
+    <button class="nav-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false"><span></span><span></span></button>
+    <div class="nav-panel">
+      <div class="nav-links"><a href="index.html">Overview</a><a href="robots.html">Robotics</a><a href="loop.html">Pipeline</a><a href="architecture.html">Architecture</a><a href="experience.html">Demo</a></div>
+      <a class="nav-launch" href="https://dcniaqwtmoca.feishuapp.com/app/app_17c53ewwq0e" target="_blank" rel="noreferrer">Launch platform <span aria-hidden="true">↗</span></a>
     </div>
   </nav>
   <main class="page-main shell">
     <section class="page-hero">
       <span class="eyebrow">CLOSED LOOP</span>
       <h1>AI 数据工厂闭环流程</h1>
-      <p>这一页只讲清楚一件事：系统不是多建几张表，而是让一次采集结果自动进入评分、分流、复采和知识沉淀，最终反哺下一轮采集。</p>
+      <p>这一页只讲清楚一件事：平台不是线性任务流水线，而是让每一次采集结果自动进入评分、AI 质检、分流、复采和知识沉淀，最终反哺下一轮采集策略。</p>
       <div class="page-switch">
         <a class="btn" href="index.html">返回主页</a>
         <a class="btn primary" href="experience.html">进入系统体验</a>
@@ -31,16 +28,23 @@
 
     <section class="card span-12">
       <div class="pipeline">
-        <div class="step"><span class="step-num">1</span><h3>需求输入</h3><p>选择机器人型号、场景类型、任务目标、风险等级和采集数据类型。</p></div>
-        <div class="step"><span class="step-num">2</span><h3>AI 生成指标</h3><p>自动输出测试指标、采集通道、检查清单、验收标准和复核点。</p></div>
-        <div class="step"><span class="step-num">3</span><h3>生成采集任务</h3><p>Workflow 写入任务表，自动带优先级、状态和最少填写提示。</p></div>
-        <div class="step"><span class="step-num">4</span><h3>自动评分分流</h3><p>根据质量总分和安全风险自动判断 A/B/C，触发不同路径。</p></div>
-        <div class="step"><span class="step-num">5</span><h3>审批后复采回流</h3><p>C/P0 样本先进入审批门禁，确认通过后再生成复采任务。</p></div>
+        <div class="step"><span class="step-num">1</span><h3>需求输入</h3><p>管理者录入场景、指标、优先级、机器人型号和采集目标。</p></div>
+        <div class="step"><span class="step-num">2</span><h3>AI 指标生成</h3><p>从需求描述中提取可量化指标、阈值、检查清单和验收标准。</p></div>
+        <div class="step"><span class="step-num">3</span><h3>任务拆解</h3><p>把需求拆成可执行采集子任务，并进入采集员今日任务队列。</p></div>
+        <div class="step"><span class="step-num">4</span><h3>数据采集</h3><p>采集员在工作台完成任务状态流转、结果提交和备注记录。</p></div>
+        <div class="step"><span class="step-num">5</span><h3>质量评分</h3><p>系统对完整性、同步、结果、风险和标注信息进行自动打分。</p></div>
+        <div class="step"><span class="step-num">6</span><h3>AI 采后质检</h3><p>AI 输出质量等级、问题清单、复采建议和知识沉淀标签。</p></div>
+        <div class="step"><span class="step-num">7</span><h3>数据清洗</h3><p>把原始采集结果标准化，为预标注、审核和训练入池做准备。</p></div>
+        <div class="step"><span class="step-num">8</span><h3>AI 预标注</h3><p>自动生成标注结果和置信度，由人工确认关键样本质量。</p></div>
+        <div class="step"><span class="step-num">9</span><h3>批量审核</h3><p>管理者集中审核、抽检样本，并处理高风险审批入口。</p></div>
+        <div class="step"><span class="step-num">10</span><h3>流程分流</h3><p>按质量等级和风险状态进入入训、复采、审批或淘汰路径。</p></div>
+        <div class="step"><span class="step-num">11</span><h3>复采闭环</h3><p>失败样本携带 AI 复采建议回到采集员工作台。</p></div>
+        <div class="step"><span class="step-num">12</span><h3>知识沉淀</h3><p>每轮采集经验进入知识库，优化下一轮指标生成和任务拆解。</p></div>
       </div>
       <div class="split">
-        <div class="route a"><strong>A 成功入训候选</strong><span>进入训练候选池，并生成下一轮更复杂场景任务。</span></div>
-        <div class="route b"><strong>B 人工复核</strong><span>进入复核路径，检查低分指标、标注完整性和边界样本。</span></div>
-        <div class="route c"><strong>C 失败复采</strong><span>进入失败队列；高风险样本先审批，避免低质量或高风险复采被自动放大。</span></div>
+        <div class="route a"><strong>A/B 合格入训</strong><span>进入训练候选池，并成为后续模型训练和任务升级的高质量样本。</span></div>
+        <div class="route b"><strong>C 待改进复采</strong><span>进入失败复采队列，携带失败原因、复采参数和注意事项回流。</span></div>
+        <div class="route c"><strong>D 高风险审批</strong><span>进入审批或淘汰路径，避免高风险样本被自动放大到后续流程。</span></div>
       </div>
     </section>
 
@@ -59,6 +63,6 @@
   <footer class="footer">闭环流程页面 · 所有样本为 DEMO 合成数据。</footer>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="site.js"></script>
+  <script src="site.js?v=20260816-5"></script>
 </body>
 </html>
